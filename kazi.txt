@@ -1,0 +1,56 @@
+<label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+<script src="https://cdnjs.cloudflare.com/ajax/materialize.min.js"></script>
+
+
+
+
+
+
+<div class = "search-box1">
+          <input class = "search-txt1" "type = "text" name = "" placeholder = "Type to search">
+            <a class = "search-btn1" href = "#">
+              <i class="fas fa-search"></i>
+            </a>
+        </div>
+
+
+
+//css
+        .pic-bg .title{
+            float : right;
+            background-color: white;
+        }
+        .pic-bg .contact{
+          background-color: white;
+          float : right;
+        }
+        .pic-bg .contact p{
+          color: black;
+          font-size: 30px;
+          padding-top: 25px;
+          padding-bottom: 15px;
+        }
+        .pic-bg .contact p i{
+          color: red;
+          font-size: 30px;
+        }
+
+      //css
+
+
+  //html
+
+
+  //html
+
+  padding: 0 30px;
+  padding-top: 30px;
+
+
+
+
+
+  <script src="galleryscript/img1.js"></script>
+
+  <footer><h4>&copy; Copyright 2019 TOB.am</h4></footer>

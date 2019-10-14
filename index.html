@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>TOB</title>
+    <link rel = "stylesheet" href = "css/style.css">
+    <link rel = "stylesheet" href = "css/searchbar.css">
+    <link rel = "stylesheet" href = "css/stylefooter.css">
+
+    <script src="https://kit.fontawesome.com/de3de6a2f8.js"></script>
+</head>
+<body>
+    <header>
+        <div class = "main">
+            <div class="logo">
+                <img src = "css/logo2.jpg">
+            </div>
+            <div class="write">
+                <h1>travellers of Banglaedesh</h1>
+            </div>
+            <ul>
+                <li class = "active"><a href = "#">Home</a></li>
+                <li><a href = "places.html">Places</a></li>
+                <li><a href = "gallery.html">Gallery</a></li>
+                <li><a href = "contact.html">Contacts</a></li>
+                <li><a href = "about.html">About</a></li>
+                <li><a href="login.html" class="btn">SIGN UP</a></li>
+            </ul>
+        </div>
+        <div class = "title">
+            <h1>Explore,Share,Enjoy</h1>
+        </div>
+
+        <div class = "button">
+            <a href="gallery.html" class="btn">GALLARY</a>
+            <a href="login.html" class="btn">SIGN UP</a>
+        </div>
+
+
+
+
+
+    </header>
+
+    <footer><h4>&copy; Copyright 2019 TOB.am</h4></footer>
+
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js"></script>
+
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDUCpAsSMU93vXn80VPUEWfMj1axIJF4Ig",
+        authDomain: "travelbd-4b49c.firebaseapp.com",
+        databaseURL: "https://travelbd-4b49c.firebaseio.com",
+        projectId: "travelbd-4b49c",
+        storageBucket: "travelbd-4b49c.appspot.com",
+        messagingSenderId: "922687113123",
+        appId: "1:922687113123:web:6cf9b1638dea18ac037c16"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      // update firestore settings
+      //db.settings({timestampsInSnapshots : true });
+    </script>
+
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/auth1.js"></script>
+
+</body>
+</html>

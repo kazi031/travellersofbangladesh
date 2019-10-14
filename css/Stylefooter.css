@@ -1,0 +1,11 @@
+footer{
+  width : auto;
+  height :50px;
+  padding-top: 15px;
+  text-align: center;
+  background-color: #2d3436;
+}
+footer h4{
+  color : white;
+  font-size: 15px;
+}

@@ -1,0 +1,113 @@
+*{
+  margin : 0;
+  padding : 0;
+  font-family: Century Gothic;
+}
+header{
+  background-color: white;
+  height : 12vh;
+  background-size: cover;
+  background-position: center;
+}
+header ul{
+  list-style-type: none;
+  float : right;
+  margin-top: 25px;
+}
+header li{
+  display: inline-block;
+}
+header ul li a{
+  text-decoration: none;
+  color : black;
+  padding : 5px 20px;
+  border: 1px solid transparent;
+  transition: 0.6s ease;
+}
+header ul li a:hover{
+  background-color: black;
+  color : #fff;
+}
+header ul li.active a{
+  background-color: black;
+  color : #fff;
+}
+header .main .logo img{
+  float : left;
+  width : 30px;
+  height : auto;
+  margin-top: 15px;
+}
+header .main{
+  max-width: 1400px;
+  margin : auto;
+}
+header .title{
+  position: absolute;
+  top : 30%;
+  left : 50%;
+  transform : translate(-50%,-50%);
+}
+header .title h1{
+  color: white;
+  font-size: 40px;
+}
+header .write{
+  float : left;
+  width : auto;
+  height : 10px;
+  margin-top: 38px;
+}
+
+div.gallery {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+div.gallery:hover {
+  border: 1px solid white;
+}
+
+div.gallery img {
+  width: 335px;
+  height: 280px;
+  border-radius: 10px;
+
+  transition: 0.8s;
+}
+div.gallery img:hover{
+  box-shadow: 10px 10px 5px grey;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+div.responsive {
+  float: left;
+  width: 21.04999%;
+  background-color: white;
+  padding: 0 30px;
+  padding-top: 30px;
+  padding-left: 120px;
+}
+
+@media only screen and (max-width: 700px) {
+  div.responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  div.responsive {
+    width: 100%;
+  }
+}
+
+div.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
