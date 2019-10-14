@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <link rel = "stylesheet" href = "css/places.css">
+    <link rel = "stylesheet" href = "css/travelling.css">
+    <script src="https://kit.fontawesome.com/de3de6a2f8.js"></script>
+
+<style>
+	.all-name{
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+  <header>
+      <div class = "main">
+          <div class="logo">
+              <img src = "css/logo2.jpg">
+          </div>
+          <div class="write">
+              <h1>travellers of Banglaedesh</h1>
+          </div>
+          <ul>
+              <li><a href = "index.html">Home</a></li>
+              <li><a href = "places.html">Places</a></li>
+              <li><a href = "gallery.html">Gallery</a></li>
+              <li><a href = "contact.html">Contacts</a></li>
+              <li class = "active"><a href = "#">About</a></li>
+              <li><a href="login.html" class="btn">SIGN UP</a></li>
+          </ul>
+      </div>
+      <div class="image">
+        <img src = "images/39.jpg">
+      </div>
+      <div class = "title">
+      <h1> Keokradong </h1>
+      <h2>Keokradong is a peak located in Bandarban, Bangladesh, with an elevation of 986 metres. Some sources claim it as the highest point of Bangladesh. On the top of Keokradong there is a small shelter and a signboard put up by Bangladesh Army proclaiming the elevation to be 967 metres. </h2>
+      </div>
+  </header>
+
+
+
+
+
+<form id="form1">
+<h2 id="name1">name : </h2>
+ <input type="text" name="usrname" id = "name">
+<br>
+<textarea rows="4" cols="50" name="comment" id = "comment"></textarea>
+<button id = "btn">Submit</button>
+<div id = "allcomment">
+
+</div>
+</form>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDUCpAsSMU93vXn80VPUEWfMj1axIJF4Ig",
+    authDomain: "travelbd-4b49c.firebaseapp.com",
+    databaseURL: "https://travelbd-4b49c.firebaseio.com",
+    projectId: "travelbd-4b49c",
+    storageBucket: "travelbd-4b49c.appspot.com",
+    messagingSenderId: "922687113123",
+    appId: "1:922687113123:web:6cf9b1638dea18ac037c16"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  // update firestore settings
+  //db.settings({timestampsInSnapshots : true });
+</script>
+
+<script type="text/javascript">
+	document.getElementById('btn').addEventListener('click', clicked);
+	function clicked() {
+		var name = document.getElementById('name').value;
+		var comment = document.getElementById('comment').value;
+		console.log(name, comment);
+
+		var node = document.createElement("div");
+		// Create a <li> node
+		node.innerHTML = `
+
+			<h2>  ${name} </h2>
+			<h4> ${comment} </h4>
+		`;
+		document.getElementById("allcomment").appendChild(node);
+		 db.collection('Comment').add({
+                User_Name: name,
+                Comment: comment,
+                Product_ID: 1
+            }).then(() => {
+                console.log('Comment Added!');
+                document.getElementById('form1').reset();
+            });
+	}
+	// retrive
+
+	db.collection('Comment').get().then(snapshot => {
+
+    const data = snapshot.docs;
+     data.forEach(doc => {
+        const guide = doc.data();
+        console.log(guide);
+        var node = document.createElement("div");
+              // Create a <li> node
+		node.innerHTML = `
+			<h2> ${guide.User_Name} </h2>
+			<h4>${guide.Comment} </h4>
+		`;
+		document.getElementById("allcomment").appendChild(node);
+
+    });
+});
+</script>
+
+</body>
+</html>
